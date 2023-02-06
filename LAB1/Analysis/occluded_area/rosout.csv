@@ -1,0 +1,2 @@
+Time,header.seq,header.stamp.secs,header.stamp.nsecs,header.frame_id,level,name,msg,file,function,line,topics
+1675703215.3210692,3,1675703215,319609349,,2,/record_1675703215298519481,Subscribing to /gps,/tmp/binarydeb/ros-noetic-rosbag-1.15.15/src/recorder.cpp,shared_ptr<ros::Subscriber> rosbag::Recorder::subscribe,255,['/rosout']

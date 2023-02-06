@@ -1,0 +1,6 @@
+devel_space: /home/immanuel/EECE5554/LAB1/catkin_ws/devel
+install: false
+install_space: /home/immanuel/EECE5554/LAB1/catkin_ws/install
+profile: default
+source_space: /home/immanuel/EECE5554/LAB1/catkin_ws/src
+workspace: /home/immanuel/EECE5554/LAB1/catkin_ws
