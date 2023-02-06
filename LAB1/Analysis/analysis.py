@@ -11,7 +11,18 @@ occluded_area = bagreader('occluded_area.bag')
 walking = bagreader('walking.bag')
 
 
-print(stationary_open_area.topic_table)
+#print(stationary_open_area.topic_table)
+
+def scale(data):
+    get_scale = data[:1] # Get first value
+    get_northing_scale = get_scale.iloc[0]['UTM_northing']
+    get_easting_scale = get_scale.iloc[0]['UTM_easting']
+
+    # print(get_easting_scale)
+    data["UTM_northing"] -= get_northing_scale
+    data["UTM_easting"] -= get_easting_scale
+    # print(data)
+    return data
 
 csvfiles = []
 for t in stationary_open_area.topics:
@@ -38,8 +49,16 @@ for axis in ax:
     axis.legend()
     axis.set_xlabel('Easting')'''
 
-stationary_open_area_csv.plot(kind='scatter', x='UTM_easting', y='UTM_northing', title='Open Area Stationary')
-# occluded_area_csv.plot(kind='scatter', x='UTM_easting', y='UTM_northing', title='Occluded Area Stationary')
-# walking_csv.plot(kind='scatter', x='UTM_easting', y='UTM_northing', title='Walking')
+scale(stationary_open_area_csv)
+scale(occluded_area_csv)
+scale(walking_csv)
+
+stationary_open_area_csv.plot(kind='scatter', x='UTM_easting', y='UTM_northing', title='Open Area Stationary Northing vs Easting', s = 1)
+occluded_area_csv.plot(kind='scatter', x='UTM_easting', y='UTM_northing', title='Occluded Area Northing vs Easting', s = 1)
+walking_csv.plot(kind='scatter', x='UTM_easting', y='UTM_northing', title='Walking Northing vs Easting', s = 1)
+
+stationary_open_area_csv.plot(kind='scatter', x='Time', y='Altitude', title='Open Area Altitude vs Time', s = 1)
+occluded_area_csv.plot(kind='scatter', x='Time', y='Altitude', title='Occluded Area Stationary Altitude vs Time', s = 1)
+walking_csv.plot(kind='scatter', x='Time', y='Altitude', title='Walking Altitude vs Time', s = 1)
 
 plt.show()
