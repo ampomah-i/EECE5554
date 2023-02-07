@@ -19,7 +19,11 @@ def latlong_to_decimal(latlong):
 
     # Convert to decimal
     decimal = round((degrees + minutes), 6)
-    return decimal
+    if indicator == 'S' or 'W':
+        return decimal * (-1)
+    
+    else:
+         return decimal
 
     print(decimal)
 
