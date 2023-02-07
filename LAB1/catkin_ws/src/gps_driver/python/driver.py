@@ -12,18 +12,23 @@ from datetime import date, datetime
 def latlong_to_decimal(latlong):
     # Store digit section of latlong
     nums = latlong[0]
-    minutes = float(nums[(len(nums)-8):len(nums)])/60
-    degrees = int(nums[0:len(nums)-8])
+    length = len(nums)
+    print(length)
+    minutes = float(nums[(length-8):length])/60
+    degrees = int(nums[0:length-8])
 
     indicator = latlong[1]
 
     # Convert to decimal
     decimal = round((degrees + minutes), 6)
-    if indicator == 'S' or 'W':
+    if indicator == 'W':
         return decimal * (-1)
     
+    elif indicator == "S":
+         return decimal * (-1)
+
     else:
-         return decimal
+        return decimal
 
     print(decimal)
 
