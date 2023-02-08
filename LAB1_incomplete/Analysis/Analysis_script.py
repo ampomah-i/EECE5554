@@ -44,7 +44,7 @@ scale(stationary_open_df)
 scale(walking_df)
 scale(occluded_df)
 
-plot = sea.lmplot(x = 'UTM_easting', y = 'UTM_northing', data = walking_df, line_kws={'label':"Linear Reg"}, legend= True)
+plot = sea.lmplot(x = 'Time', y = 'Altitude', data = walking_df, line_kws={'label':"Linear Reg"}, legend= True)
 
 ax = plot.axes[0,0]
 ax.legend()
@@ -52,19 +52,19 @@ leg = ax.get_legend()
 L_labels = leg.get_texts()
 slope, intercept, r_value, p_value, std_err = stats.linregress(walking_df['UTM_easting'],walking_df['UTM_northing'])
 label_line_1 = r'$y={0:.1f}x+{1:.1f}'.format(slope,intercept)
-label_line_2 = r'$std err:{0:.2f}$'.format(std_err)
+label_line_2 = r'$R^2:{0:.2f}$'.format(r_value)
 L_labels[0].set_text(label_line_2)
 #L_labels[1].set_text(label_line_2)
 
 #stationary_open_df.plot(kind='scatter', x= 'UTM_easting', y='UTM_northing', title='Sationary Open Area Easting vs Northing')
 '''sea.regplot(x= walking_df['Time'],
-            y = walking_df['Altitude']).set(title='Walking Altitude vs Time')'''
-'''sea.regplot(x= occluded_df['UTM_easting'],
-            y =occluded_df['UTM_northing']).set(title='Walking Easting vs Northing')'''
+            y = walking_df['Altitude']).set(title='Walking Altitude(m) vs Time(s)')'''
+'''sea.regplot(x= stationary_open_df['UTM_easting'],
+            y =stationary_open_df['UTM_northing']).set(title='Open Area Northing vs Easting in Meters')'''
 #sea.regplot(x= walking_df['UTM_easting'], y =walking_df['UTM_northing']).set(title='Walking Easting vs Northing')
 #sea.regplot(x= occluded_df['UTM_easting'], y =occluded_df['UTM_northing']).set(title='Occluded Area Easting vs Northing')
-easting_mean = walking_df['UTM_easting'].mean()
-northing_mean = walking_df['UTM_northing'].mean()
+easting_mean = occluded_df['UTM_easting'].mean()
+northing_mean = occluded_df['UTM_northing'].mean()
 #mean_coord = [easting_mean, northing_mean]
 
 '''xlist = stationary_open_df['UTM_easting'].tolist()
@@ -72,22 +72,28 @@ ylist = stationary_open_df['UTM_easting'].tolist()'''
 
 '''xlist = occluded_df['UTM_easting'].tolist()
 ylist = occluded_df['UTM_easting'].tolist()'''
-xlist = walking_df['UTM_easting'].tolist()
-ylist = walking_df['UTM_easting'].tolist()
+xlist = occluded_df['UTM_easting'].tolist()
+ylist = occluded_df['UTM_easting'].tolist()
 
 distance = []
+actual = []
 
-'''i = 0
+i = 0
 while i < len(xlist):
     distance.append((((xlist[i] - easting_mean)**2) + ((ylist[i] - northing_mean)**2))**.5)
+    actual.append(0.1)
     i += 1
-print(distance)
 
+
+'''
 hist_data = np.array(distance)
 
-fig, ax = plt.subplots(figsize =(10, 7))
-ax.hist(hist_data, bins = [8,9,10])'''
+print(hist_data.mean())
+print(np.median(distance))'''
+
+'''fig, ax = plt.subplots(figsize =(10, 7))
+ax.hist(hist_data, bins = [4,5,6,7,8,9,10])'''
 
 #print(mean_coord)
-#plt.title('Error from your known position to your measured position.')
+#plt.title('Open area error histogram in Meters.')
 plt.show()
