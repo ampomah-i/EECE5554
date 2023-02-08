@@ -13,7 +13,6 @@ def latlong_to_decimal(latlong):
     # Store digit section of latlong
     nums = latlong[0]
     length = len(nums)
-    print(length)
     minutes = float(nums[(length-8):length])/60
     degrees = int(nums[0:length-8])
 
