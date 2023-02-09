@@ -98,7 +98,7 @@ if __name__ == "__main__":
     rospy.logdebug("Using gps puch on port " +serial_port+ " at " +str(serial_baud))
 
     # Publisher
-    gps_publish = rospy.Publisher('/gps', gps_msg, queue_size=5)
+    gps_publish = rospy.Publisher("gps", gps_msg, queue_size=5)
 
     # print("Done 2")
 
