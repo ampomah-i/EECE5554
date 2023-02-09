@@ -136,7 +136,6 @@ if __name__ == "__main__":
                     # Assign all values to message fields
                     DATA.Header.stamp.secs = time_in_seconds[0]
                     DATA.Header.stamp.nsecs = time_in_seconds[1]
-                    DATA.Header.frame_id = "GPS1_FRAME"
                     DATA.Header.seq+=1
                     DATA.Latitude = lat_decimal
                     DATA.Longitude = long_decimal
