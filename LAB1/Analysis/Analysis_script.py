@@ -72,28 +72,22 @@ ylist = stationary_open_df['UTM_easting'].tolist()'''
 
 '''xlist = occluded_df['UTM_easting'].tolist()
 ylist = occluded_df['UTM_easting'].tolist()'''
-xlist = occluded_df['UTM_easting'].tolist()
-ylist = occluded_df['UTM_easting'].tolist()
+'''xlist = walking_df['UTM_easting'].tolist()
+ylist = walking_df['UTM_northing'].tolist()
 
-distance = []
-actual = []
+difference = []
 
 i = 0
 while i < len(xlist):
-    distance.append((((xlist[i] - easting_mean)**2) + ((ylist[i] - northing_mean)**2))**.5)
-    actual.append(0.1)
+    difference.append(abs((1.75-0.856*(xlist[i]))-ylist[i]))
     i += 1
 
-
-'''
-hist_data = np.array(distance)
-
-print(hist_data.mean())
-print(np.median(distance))'''
+print(np.array(difference).mean())
+print(np.median(difference))'''
 
 '''fig, ax = plt.subplots(figsize =(10, 7))
 ax.hist(hist_data, bins = [4,5,6,7,8,9,10])'''
 
 #print(mean_coord)
 #plt.title('Open area error histogram in Meters.')
-plt.show()
+#plt.show()

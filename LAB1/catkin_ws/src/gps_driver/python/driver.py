@@ -15,7 +15,7 @@ def latlong_to_decimal(latlong):
     decimal_break = nums.split(".")
     pre_decimal = decimal_break[0]
     minutes = float(pre_decimal[-2:]+'.'+decimal_break[1])/60
-    degrees = int(pre_decimal.replace(pre_decimal[-2:],''))
+    degrees = int(pre_decimal[:-2])
 
     indicator = latlong[1]
 
