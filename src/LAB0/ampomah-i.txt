@@ -1,0 +1,2 @@
+1. UBUNTU 20.04 LTS install complete
+2. GIT installed and setup. Ready to use

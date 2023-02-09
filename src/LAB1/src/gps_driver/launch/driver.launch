@@ -1,0 +1,7 @@
+<launch>
+	
+	<arg name="port" default="/dev/pts/5"/>
+	<node name="driver" pkg="gps_driver" type="driver.py" output="screen" clear_params="true" args="port"/>
+		<param name="port" value="$(arg port)" />
+	
+</launch>
