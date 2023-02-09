@@ -4,6 +4,7 @@
 import rospy
 import serial
 import utm
+import std_msgs.msg
 from gps_driver.msg import gps_msg
 from datetime import date, datetime
 
@@ -89,7 +90,7 @@ if __name__ == "__main__":
     sampling_rate = rospy.get_param('~sampling_rate', 1.0)
 
     DATA = gps_msg()
-    DATA.Header.frame_id = "GPS1_FRAME"
+    DATA.Header = std_msgs.msg.Header()
     # Open serial port
     ser = serial.Serial(serial_port, serial_baud)
 
@@ -134,6 +135,7 @@ if __name__ == "__main__":
                     # print("Done 8")
 
                     # Assign all values to message fields
+                    DATA.Header.frame_id = "GPS1_FRAME"
                     DATA.Header.stamp.secs = time_in_seconds[0]
                     DATA.Header.stamp.nsecs = time_in_seconds[1]
                     DATA.Header.seq+=1
