@@ -4,7 +4,6 @@
 import rospy
 import serial
 import utm
-import std_msgs.msg
 from gps_driver.msg import gps_msg
 from datetime import date, datetime
 
@@ -89,8 +88,8 @@ if __name__ == "__main__":
     serial_baud = rospy.get_param('~baudrate',4800)
     sampling_rate = rospy.get_param('~sampling_rate', 1.0)
 
-    msg = gps_msg()
-    msg.Header.frame_id = "GPS1_FRAME"
+    DATA = gps_msg()
+    DATA.Header.frame_id = "GPS1_FRAME"
     # Open serial port
     ser = serial.Serial(serial_port, serial_baud)
 
@@ -135,23 +134,23 @@ if __name__ == "__main__":
                     # print("Done 8")
 
                     # Assign all values to message fields
-                    msg.Header.stamp.secs = time_in_seconds[0]
-                    msg.Header.stamp.nsecs = time_in_seconds[1]
-                    msg.Header.frame_id = "GPS1_FRAME"
-                    msg.Header.seq+=1
-                    msg.Latitude = lat_decimal
-                    msg.Longitude = long_decimal
-                    msg.Altitude = float(message_list[9])
-                    msg.HDOP = float(message_list[7])
-                    msg.UTM_easting = latlong_to_utm[0]
-                    msg.UTM_northing = latlong_to_utm[1]
-                    msg.Zone = latlong_to_utm[2]
-                    msg.Letter = latlong_to_utm[3]                    
-                    msg.UTC = UTC_secs + time_in_seconds[0]
+                    DATA.Header.stamp.secs = time_in_seconds[0]
+                    DATA.Header.stamp.nsecs = time_in_seconds[1]
+                    DATA.Header.frame_id = "GPS1_FRAME"
+                    DATA.Header.seq+=1
+                    DATA.Latitude = lat_decimal
+                    DATA.Longitude = long_decimal
+                    DATA.Altitude = float(message_list[9])
+                    DATA.HDOP = float(message_list[7])
+                    DATA.UTM_easting = latlong_to_utm[0]
+                    DATA.UTM_northing = latlong_to_utm[1]
+                    DATA.Zone = latlong_to_utm[2]
+                    DATA.Letter = latlong_to_utm[3]                    
+                    DATA.UTC = UTC_secs + time_in_seconds[0]
                     # print("Done 9")
 
-                    gps_publish.publish(msg)
-                    print(msg)
+                    gps_publish.publish(DATA)
+                    print(DATA)
                     print(puck_message)
                     print(latlong_to_utm)
                     # print(HDOP)
