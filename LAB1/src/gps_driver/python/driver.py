@@ -90,7 +90,6 @@ if __name__ == "__main__":
     sampling_rate = rospy.get_param('~sampling_rate', 1.0)
 
     DATA = gps_msg()
-    DATA.Header = std_msgs.msg.Header()
     # Open serial port
     ser = serial.Serial(serial_port, serial_baud)
 
