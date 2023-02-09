@@ -83,7 +83,7 @@ if __name__ == "__main__":
     # portname = args.port
     portnam = rospy.get_param(rospy.myargv()[1])
     print(portnam)
-    SENSOR_NAME = "GPS1_Frame"
+    SENSOR_NAME = "GPS1_FRAME"
     rospy.init_node('driver')
     serial_port = rospy.get_param('~port', portnam)
     serial_baud = rospy.get_param('~baudrate',4800)
