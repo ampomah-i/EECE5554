@@ -1,1 +1,7 @@
-/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/share/common-lisp/ros/gps_driver/msg/_package.lisp
+(cl:defpackage gps_driver-msg
+  (:use )
+  (:export
+   "<GPS_MSG>"
+   "GPS_MSG"
+  ))
+

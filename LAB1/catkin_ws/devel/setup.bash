@@ -1,1 +1,0 @@
-/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/catkin_tools_prebuild/setup.bash

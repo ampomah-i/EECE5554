@@ -1,3 +1,0 @@
-Time,header.seq,header.stamp.secs,header.stamp.nsecs,header.frame_id,level,name,msg,file,function,line,topics
-1675802886.0288758,2,1675802886,24787911,,2,/record_1675802885947723270,Subscribing to /gps,/tmp/binarydeb/ros-noetic-rosbag-1.15.15/src/recorder.cpp,shared_ptr<ros::Subscriber> rosbag::Recorder::subscribe,255,['/rosout']
-1675802886.0290468,3,1675802886,28749888,,2,/record_1675802885947723270,Recording to '2023-02-07-15-48-06.bag'.,/tmp/binarydeb/ros-noetic-rosbag-1.15.15/src/recorder.cpp,Recorder::startWriting,449,['/rosout']

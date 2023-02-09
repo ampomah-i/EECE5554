@@ -1,8 +1,0 @@
-prefix=/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver
-
-Name: gps_driver
-Description: Description of gps_driver
-Version: 0.0.0
-Cflags: -I/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/include -I/home/immanuel/EECE5554/LAB1/catkin_ws/src/gps_driver/include
-Libs: -L${prefix}/lib -lgps_driver
-Requires: roscpp rospy message_runtime

@@ -1,1 +1,2 @@
-/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/share/gps_driver/cmake/gps_driver-msg-extras.cmake
+set(gps_driver_MESSAGE_FILES "/home/immanuel/EECE5554/LAB1/src/gps_driver/msg/gps_msg.msg")
+set(gps_driver_SERVICE_FILES "")

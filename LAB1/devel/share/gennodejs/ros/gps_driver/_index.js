@@ -1,1 +1,6 @@
-/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/share/gennodejs/ros/gps_driver/_index.js
+
+"use strict";
+
+module.exports = {
+  msg: require('./msg/_index.js'),
+};

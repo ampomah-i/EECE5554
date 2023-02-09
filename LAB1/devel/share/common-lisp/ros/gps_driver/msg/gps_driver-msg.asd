@@ -1,1 +1,10 @@
-/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/share/common-lisp/ros/gps_driver/msg/gps_driver-msg.asd
+
+(cl:in-package :asdf)
+
+(defsystem "gps_driver-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :std_msgs-msg
+)
+  :components ((:file "_package")
+    (:file "gps_msg" :depends-on ("_package_gps_msg"))
+    (:file "_package_gps_msg" :depends-on ("_package"))
+  ))

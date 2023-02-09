@@ -1,4 +1,4 @@
-prefix=/home/immanuel/EECE5554/LAB1/catkin_ws/install
+prefix=/home/immanuel/EECE5554/LAB1/install
 
 Name: gps_driver
 Description: Description of gps_driver

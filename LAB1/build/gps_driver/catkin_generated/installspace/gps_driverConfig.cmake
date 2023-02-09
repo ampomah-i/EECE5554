@@ -67,14 +67,14 @@ set(gps_driver_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(gps_driver_SOURCE_PREFIX /home/immanuel/EECE5554/LAB1/catkin_ws/src/gps_driver)
-  set(gps_driver_DEVEL_PREFIX /home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver)
+  set(gps_driver_SOURCE_PREFIX /home/immanuel/EECE5554/LAB1/src/gps_driver)
+  set(gps_driver_DEVEL_PREFIX /home/immanuel/EECE5554/LAB1/devel)
   set(gps_driver_INSTALL_PREFIX "")
   set(gps_driver_PREFIX ${gps_driver_DEVEL_PREFIX})
 else()
   set(gps_driver_SOURCE_PREFIX "")
   set(gps_driver_DEVEL_PREFIX "")
-  set(gps_driver_INSTALL_PREFIX /home/immanuel/EECE5554/LAB1/catkin_ws/install)
+  set(gps_driver_INSTALL_PREFIX /home/immanuel/EECE5554/LAB1/install)
   set(gps_driver_PREFIX ${gps_driver_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/immanuel/EECE5554/LAB1/catkin_ws/install/lib;/home/immanuel/EECE5554/LAB1/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/immanuel/EECE5554/LAB1/install/lib;/home/immanuel/EECE5554/LAB1/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

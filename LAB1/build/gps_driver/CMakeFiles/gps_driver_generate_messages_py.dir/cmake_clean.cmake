@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/lib/python3/dist-packages/gps_driver/msg/__init__.py"
-  "/home/immanuel/EECE5554/LAB1/catkin_ws/devel/.private/gps_driver/lib/python3/dist-packages/gps_driver/msg/_gps_msg.py"
+  "/home/immanuel/EECE5554/LAB1/devel/lib/python3/dist-packages/gps_driver/msg/__init__.py"
+  "/home/immanuel/EECE5554/LAB1/devel/lib/python3/dist-packages/gps_driver/msg/_gps_msg.py"
   "CMakeFiles/gps_driver_generate_messages_py"
 )
 
