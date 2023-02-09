@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/immanuel/EECE5554/LAB1/Structure_Checker/EECE5554/LAB1/build'
+export PWD='/home/immanuel/EECE5554/Structure_Checker/EECE5554/LAB1/build'

@@ -1,4 +1,7 @@
 Header Header
+	uint32 seq
+	time stamp
+	string frame_id
 float64 Latitude
 float64 Longitude
 float64 Altitude
