@@ -135,10 +135,10 @@ if __name__ == "__main__":
                     # print("Done 8")
 
                     # Assign all values to message fields
-                    msg.header.stamp.secs = time_in_seconds[0]
-                    msg.header.stamp.nsecs = time_in_seconds[1]
-                    msg.header.frame_id = SENSOR_NAME
-                    msg.header.seq+=1
+                    msg.Header.stamp.secs = time_in_seconds[0]
+                    msg.Header.stamp.nsecs = time_in_seconds[1]
+                    msg.Header.frame_id = SENSOR_NAME
+                    msg.Header.seq+=1
                     msg.Latitude = lat_decimal
                     msg.Longitude = long_decimal
                     msg.Altitude = float(message_list[9])
