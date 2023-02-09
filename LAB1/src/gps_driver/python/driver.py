@@ -150,8 +150,7 @@ if __name__ == "__main__":
                     # print("Done 9")
 
                     gps_publish.publish(DATA)
-                    print(DATA)
+                    print(type(DATA))
                     print(puck_message)
-                    print(latlong_to_utm)
                     # print(HDOP)
                     # print(message_list[1])
