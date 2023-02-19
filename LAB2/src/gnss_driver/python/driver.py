@@ -5,7 +5,7 @@ import rospy
 import serial
 import utm
 import std_msgs.msg
-from gps_driver.msg import gps_msg
+from gnss_driver.msg import gnss_msg
 from datetime import date, datetime
 
 
@@ -47,7 +47,9 @@ def UTC_to_sec_nsec(utc):
 
     return sec_list
 
-
+#get current date and time for file naming
+now = datetime.now()
+date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
 # Current datetime
 date = str(date.today())
 # print(date)
@@ -86,10 +88,10 @@ if __name__ == "__main__":
     SENSOR_NAME = "GPS1_FRAME"
     rospy.init_node('driver')
     serial_port = rospy.get_param('~port', portnam)
-    serial_baud = rospy.get_param('~baudrate',4800)
+    serial_baud = rospy.get_param('~baudrate',9600)
     sampling_rate = rospy.get_param('~sampling_rate', 1.0)
 
-    DATA = gps_msg()
+    DATA = gnss_msg()
     # Open serial port
     ser = serial.Serial(serial_port, serial_baud)
 
@@ -97,21 +99,22 @@ if __name__ == "__main__":
     rospy.logdebug("Using gps puch on port " +serial_port+ " at " +str(serial_baud))
 
     # Publisher
-    gps_publish = rospy.Publisher("gps", gps_msg, queue_size=5)
+    gps_publish = rospy.Publisher("gnss", gnss_msg, queue_size=5)
 
     # print("Done 2")
+    sleep_time = 1/sampling_rate - 0.025
 
     while True:
             while not rospy.is_shutdown():
                 # Reading serial messages
-                puck_message = ser.readline()
+                message = ser.readline()
                 # Decoding serial messages into string
-                decoded_puck_message = puck_message.decode()
+                decoded_message = message.decode()
                 # print("Done 3")
 
-                if 'GPGGA' in decoded_puck_message:
+                if 'GNGGA' in decoded_message:
                     # Storing message as a list of values
-                    message_list = decoded_puck_message.split(",")
+                    message_list = decoded_message.split(",")
                     # print("Done 4")
 
                     # Extract GPGGA Lat and Long
@@ -134,9 +137,9 @@ if __name__ == "__main__":
                     # print("Done 8")
 
                     # Assign all values to message fields
-                    DATA.Header.frame_id = "GPS1_FRAME"
+                    DATA.Header.frame_id = "GNSS1_FRAME"
                     DATA.Header.stamp.secs = time_in_seconds[0]
-                    DATA.Header.stamp.nsecs = time_in_seconds[1]
+                    DATA.Header.stamp.nsecs = int(time_in_seconds[1]*(10**6))
                     DATA.Header.seq+=1
                     DATA.Latitude = lat_decimal
                     DATA.Longitude = long_decimal
@@ -147,10 +150,12 @@ if __name__ == "__main__":
                     DATA.Zone = latlong_to_utm[2]
                     DATA.Letter = latlong_to_utm[3]                    
                     DATA.UTC = UTC_secs + time_in_seconds[0]
+                    DATA.fix_quality = int(message_list[6])
                     # print("Done 9")
 
                     gps_publish.publish(DATA)
-                    print(DATA.HDOP)
-                    print(puck_message)
+                    # print(type(DATA))
+                    print(message)
                     # print(HDOP)
                     # print(message_list[1])
+                rospy.sleep(sleep_time)

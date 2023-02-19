@@ -1,0 +1,1105 @@
+Time,header.seq,header.stamp.secs,header.stamp.nsecs,header.frame_id,level,name,msg,file,function,line,topics
+1676488639.2448,2601,1676488639,243241071,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488639
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33602274166667
+Longitude: -71.08867745166667
+Altitude: 73.321
+HDOP: 0.9
+UTM_easting: 327930.12656909775
+UTM_northing: 4689198.290566309
+UTC: 191719.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488640.2469084,2602,1676488640,244947195,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488640
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33601040666667
+Longitude: -71.08865106833333
+Altitude: 68.068
+HDOP: 1.0
+UTM_easting: 327932.26653504284
+UTM_northing: 4689196.867470801
+UTC: 191720.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488641.2452667,2603,1676488641,242864131,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488641
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33601444666667
+Longitude: -71.08855674333333
+Altitude: 70.047
+HDOP: 1.0
+UTM_easting: 327940.04858235025
+UTM_northing: 4689197.125215952
+UTC: 191721.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488642.2503097,2604,1676488642,246940612,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488642
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33601339
+Longitude: -71.08855777
+Altitude: 70.676
+HDOP: 0.9
+UTM_easting: 327939.96111790475
+UTM_northing: 4689197.009958602
+UTC: 191722.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488643.2395623,2605,1676488643,238239049,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488643
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336166973333334
+Longitude: -71.08847965833333
+Altitude: 60.974
+HDOP: 1.0
+UTM_easting: 327946.8152492696
+UTM_northing: 4689213.906161976
+UTC: 191723.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488644.2420456,2606,1676488644,239722251,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488644
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33619544
+Longitude: -71.08849129833334
+Altitude: 74.297
+HDOP: 1.0
+UTM_easting: 327945.9339165897
+UTM_northing: 4689217.090719917
+UTC: 191724.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488645.242476,2607,1676488645,240444898,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488645
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336189698333335
+Longitude: -71.08844472666667
+Altitude: 58.919
+HDOP: 1.0
+UTM_easting: 327949.75508533535
+UTM_northing: 4689216.358920351
+UTC: 191725.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488646.2508543,2608,1676488646,248514652,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488646
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33620202666667
+Longitude: -71.08849117833333
+Altitude: 66.857
+HDOP: 0.9
+UTM_easting: 327945.9617659906
+UTM_northing: 4689217.821876114
+UTC: 191726.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488647.2431414,2609,1676488647,241137742,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488647
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336162635
+Longitude: -71.08845444
+Altitude: 58.888
+HDOP: 1.0
+UTM_easting: 327948.88104231143
+UTM_northing: 4689213.373397414
+UTC: 191727.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488648.2457216,2610,1676488648,242209672,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488648
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336176613333336
+Longitude: -71.08844655833333
+Altitude: 60.626
+HDOP: 1.0
+UTM_easting: 327949.5684980471
+UTM_northing: 4689214.909637178
+UTC: 191728.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488649.2428575,2611,1676488649,240839242,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488649
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336197371666664
+Longitude: -71.08842876833333
+Altitude: 51.888
+HDOP: 1.0
+UTM_easting: 327951.090745777
+UTM_northing: 4689217.178696373
+UTC: 191729.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488650.2419603,2612,1676488650,240156888,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488650
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33622466166667
+Longitude: -71.08842394
+Altitude: 55.373
+HDOP: 1.0
+UTM_easting: 327951.56295297574
+UTM_northing: 4689220.199273069
+UTC: 191730.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488651.250552,2613,1676488651,248269557,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488651
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336254376666666
+Longitude: -71.08841625833334
+Altitude: 52.016
+HDOP: 1.0
+UTM_easting: 327952.2768459944
+UTM_northing: 4689223.48335433
+UTC: 191731.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488652.2426226,2614,1676488652,240634679,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488652
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336265735
+Longitude: -71.08837883666666
+Altitude: 52.996
+HDOP: 1.0
+UTM_easting: 327955.39081821963
+UTM_northing: 4689224.66889541
+UTC: 191732.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488653.2450933,2615,1676488653,242145776,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488653
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33625358166667
+Longitude: -71.088336735
+Altitude: 50.995
+HDOP: 1.0
+UTM_easting: 327958.82623635186
+UTM_northing: 4689223.234178162
+UTC: 191733.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488654.2411082,2616,1676488654,239121675,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488654
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33627182
+Longitude: -71.08837419666666
+Altitude: 61.458
+HDOP: 1.1
+UTM_easting: 327955.78968030727
+UTM_northing: 4689225.335200174
+UTC: 191734.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488655.2388346,2617,1676488655,236642599,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488655
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33631399
+Longitude: -71.08826793166666
+Altitude: 33.711
+HDOP: 1.1
+UTM_easting: 327964.65935183375
+UTM_northing: 4689229.802858941
+UTC: 191735.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488656.2348208,2618,1676488656,232728242,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488656
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336322341666666
+Longitude: -71.088261165
+Altitude: 33.111
+HDOP: 1.1
+UTM_easting: 327965.23959975643
+UTM_northing: 4689230.716557624
+UTC: 191736.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488657.235805,2619,1676488657,233438491,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488657
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33633932
+Longitude: -71.088254225
+Altitude: 20.907
+HDOP: 1.1
+UTM_easting: 327965.8576516666
+UTM_northing: 4689232.587831093
+UTC: 191737.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488658.2303483,2620,1676488658,228801965,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488658
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336354523333334
+Longitude: -71.08825553333334
+Altitude: 14.808
+HDOP: 1.1
+UTM_easting: 327965.79132224596
+UTM_northing: 4689234.278692068
+UTC: 191738.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488659.233761,2621,1676488659,231536626,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488659
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336372788333335
+Longitude: -71.08822957666666
+Altitude: 22.441
+HDOP: 1.1
+UTM_easting: 327967.979574312
+UTM_northing: 4689236.254366678
+UTC: 191739.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488660.2336195,2622,1676488660,231689691,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488660
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336358825
+Longitude: -71.08819709833334
+Altitude: 24.724
+HDOP: 1.1
+UTM_easting: 327970.6172328547
+UTM_northing: 4689234.63813774
+UTC: 191740.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488661.2362025,2623,1676488661,234210014,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488661
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336346265
+Longitude: -71.08821376833333
+Altitude: 36.287
+HDOP: 1.0
+UTM_easting: 327969.2096220582
+UTM_northing: 4689233.277170926
+UTC: 191741.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488662.233779,2624,1676488662,232131004,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488662
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.3363541
+Longitude: -71.08823243166667
+Altitude: 38.547
+HDOP: 1.0
+UTM_easting: 327967.69340392156
+UTM_northing: 4689234.184946087
+UTC: 191742.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488663.2339623,2625,1676488663,232081174,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488663
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33634101333333
+Longitude: -71.08825114333334
+Altitude: 38.455
+HDOP: 1.0
+UTM_easting: 327966.11615307204
+UTM_northing: 4689232.7696281355
+UTC: 191743.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488664.2347338,2626,1676488664,232313632,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488664
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33634017
+Longitude: -71.08823145833334
+Altitude: 39.289
+HDOP: 1.0
+UTM_easting: 327967.7356069532
+UTM_northing: 4689232.636156832
+UTC: 191744.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488665.2330344,2627,1676488665,231731653,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488665
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33636616333333
+Longitude: -71.08817518166667
+Altitude: 26.483
+HDOP: 1.1
+UTM_easting: 327972.4428524035
+UTM_northing: 4689235.408664199
+UTC: 191745.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488666.2301738,2628,1676488666,229231834,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488666
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336384735
+Longitude: -71.088148185
+Altitude: 27.222
+HDOP: 1.1
+UTM_easting: 327974.7176189569
+UTM_northing: 4689237.416289836
+UTC: 191746.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488667.2317824,2629,1676488667,229705810,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488667
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33640546
+Longitude: -71.08813457333333
+Altitude: 24.047
+HDOP: 1.1
+UTM_easting: 327975.8955304038
+UTM_northing: 4689239.690105705
+UTC: 191747.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488668.2349637,2630,1676488668,233090639,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488668
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33644055
+Longitude: -71.08811703333333
+Altitude: 22.881
+HDOP: 1.1
+UTM_easting: 327977.4362467525
+UTM_northing: 4689243.551098144
+UTC: 191748.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488669.2330317,2631,1676488669,231729745,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488669
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336463198333334
+Longitude: -71.088103025
+Altitude: 22.481
+HDOP: 1.1
+UTM_easting: 327978.6520801997
+UTM_northing: 4689246.037683446
+UTC: 191749.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488670.2313676,2632,1676488670,229919195,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488670
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33648613166667
+Longitude: -71.08807719166667
+Altitude: 28.942
+HDOP: 1.1
+UTM_easting: 327980.84289321344
+UTM_northing: 4689248.531994147
+UTC: 191750.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488671.254363,2633,1676488671,251226902,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488671
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336496573333335
+Longitude: -71.08807801833333
+Altitude: 17.903
+HDOP: 1.1
+UTM_easting: 327980.8032592548
+UTM_northing: 4689249.693133803
+UTC: 191751.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488672.2307284,2634,1676488672,227961778,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488672
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33652232833333
+Longitude: -71.08804521
+Altitude: 18.628
+HDOP: 1.4
+UTM_easting: 327983.57639952167
+UTM_northing: 4689252.486659532
+UTC: 191752.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488673.231918,2635,1676488673,229594230,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488673
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33649843
+Longitude: -71.08804249
+Altitude: 18.285
+HDOP: 1.4
+UTM_easting: 327983.7353248653
+UTM_northing: 4689249.827429739
+UTC: 191753.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488674.2313766,2636,1676488674,229146718,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488674
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336453748333334
+Longitude: -71.08811015833334
+Altitude: 25.035
+HDOP: 1.4
+UTM_easting: 327978.03863248427
+UTM_northing: 4689245.002763968
+UTC: 191754.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488675.2319171,2637,1676488675,228992223,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488675
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33645750666667
+Longitude: -71.08811914666667
+Altitude: 26.031
+HDOP: 1.4
+UTM_easting: 327977.3083757197
+UTM_northing: 4689245.438281763
+UTC: 191755.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488676.2283697,2638,1676488676,226234674,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488676
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336439086666665
+Longitude: -71.0881199
+Altitude: 14.163
+HDOP: 1.4
+UTM_easting: 327977.196085985
+UTM_northing: 4689243.3944054935
+UTC: 191756.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488677.2341983,2639,1676488677,231626987,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488677
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33642703333334
+Longitude: -71.08811545833333
+Altitude: 20.183
+HDOP: 1.4
+UTM_easting: 327977.52914714604
+UTM_northing: 4689242.046989312
+UTC: 191757.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488678.2400787,2640,1676488678,237684726,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488678
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33644562166667
+Longitude: -71.08810028166667
+Altitude: 8.211
+HDOP: 1.1
+UTM_easting: 327978.8301636333
+UTM_northing: 4689244.0803791
+UTC: 191758.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488679.2419782,2641,1676488679,239506483,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488679
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33640628333333
+Longitude: -71.08812790833333
+Altitude: 11.931
+HDOP: 1.0
+UTM_easting: 327976.44687250396
+UTM_northing: 4689239.768047038
+UTC: 191759.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488680.2389321,2642,1676488680,237024307,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488680
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33638203666667
+Longitude: -71.08818500166667
+Altitude: 14.477
+HDOP: 1.0
+UTM_easting: 327971.6771131524
+UTM_northing: 4689237.191143274
+UTC: 191800.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488681.2385283,2643,1676488681,236158609,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488681
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336399113333336
+Longitude: -71.08820192666667
+Altitude: 22.172
+HDOP: 1.1
+UTM_easting: 327970.329308977
+UTM_northing: 4689239.12161757
+UTC: 191801.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488682.231698,2644,1676488682,229439973,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488682
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336389116666666
+Longitude: -71.088202395
+Altitude: 27.915
+HDOP: 1.1
+UTM_easting: 327970.26346603397
+UTM_northing: 4689238.012511596
+UTC: 191802.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488683.233638,2645,1676488683,231536388,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488683
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33637375
+Longitude: -71.08818012
+Altitude: 23.061
+HDOP: 1.1
+UTM_easting: 327972.05669409747
+UTM_northing: 4689236.261096219
+UTC: 191803.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488684.234792,2646,1676488684,233267307,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488684
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33638146166667
+Longitude: -71.08817681166667
+Altitude: 24.983
+HDOP: 1.2
+UTM_easting: 327972.35027995554
+UTM_northing: 4689237.110724852
+UTC: 191804.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488685.234126,2647,1676488685,231915235,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488685
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33637290833333
+Longitude: -71.088199865
+Altitude: 34.71
+HDOP: 1.2
+UTM_easting: 327970.42770321533
+UTM_northing: 4689236.207581555
+UTC: 191805.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488686.2385612,2648,1676488686,236171245,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488686
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33637388333333
+Longitude: -71.08817797333333
+Altitude: 39.196
+HDOP: 1.2
+UTM_easting: 327972.2339112375
+UTM_northing: 4689236.271558981
+UTC: 191806.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488687.2356715,2649,1676488687,233716249,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488687
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33635660833333
+Longitude: -71.08819954
+Altitude: 33.529
+HDOP: 1.1
+UTM_easting: 327970.41003114125
+UTM_northing: 4689234.396933583
+UTC: 191807.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488688.2389016,2650,1676488688,237117290,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488688
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33635986
+Longitude: -71.088210125
+Altitude: 41.936
+HDOP: 1.0
+UTM_easting: 327969.54685032135
+UTM_northing: 4689234.7794209225
+UTC: 191808.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488689.23676,2651,1676488689,235507965,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488689
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33632807
+Longitude: -71.08820306833333
+Altitude: 40.306
+HDOP: 1.0
+UTM_easting: 327970.04152944195
+UTM_northing: 4689231.235107905
+UTC: 191809.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488690.2360816,2652,1676488690,234489440,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488690
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336311783333336
+Longitude: -71.08825850333334
+Altitude: 35.971
+HDOP: 1.1
+UTM_easting: 327965.43009035394
+UTM_northing: 4689229.538750399
+UTC: 191810.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488691.2361307,2653,1676488691,233019113,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488691
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33629459666667
+Longitude: -71.08830143
+Altitude: 32.142
+HDOP: 1.0
+UTM_easting: 327961.84669749363
+UTM_northing: 4689227.717150789
+UTC: 191811.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488692.2385046,2654,1676488692,236537933,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488692
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33627410333333
+Longitude: -71.08828375
+Altitude: 36.757
+HDOP: 1.0
+UTM_easting: 327963.2473857687
+UTM_northing: 4689225.405752663
+UTC: 191812.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488693.233826,2655,1676488693,231373310,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488693
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33627066166667
+Longitude: -71.08831929666667
+Altitude: 29.851
+HDOP: 1.1
+UTM_easting: 327960.3094764752
+UTM_northing: 4689225.095499944
+UTC: 191813.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488694.2389362,2656,1676488694,236629247,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488694
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336269693333335
+Longitude: -71.08837058
+Altitude: 22.853
+HDOP: 1.1
+UTM_easting: 327956.0818410893
+UTM_northing: 4689225.091732596
+UTC: 191814.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488695.2382185,2657,1676488695,236117839,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488695
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33628096666666
+Longitude: -71.08836053
+Altitude: 37.531
+HDOP: 1.0
+UTM_easting: 327956.9405564789
+UTM_northing: 4689226.323216328
+UTC: 191815.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488696.239663,2658,1676488696,236361265,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488696
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33626591666667
+Longitude: -71.088413955
+Altitude: 33.765
+HDOP: 1.1
+UTM_easting: 327952.4980776817
+UTM_northing: 4689224.7601227965
+UTC: 191816.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488697.234137,2659,1676488697,231860637,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488697
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33622179333334
+Longitude: -71.08837575666666
+Altitude: 37.827
+HDOP: 1.4
+UTM_easting: 327955.52473395504
+UTM_northing: 4689219.7832774045
+UTC: 191817.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488698.2443912,2660,1676488698,241848230,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488698
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33622633666667
+Longitude: -71.088394245
+Altitude: 69.696
+HDOP: 1.0
+UTM_easting: 327954.01395520114
+UTM_northing: 4689220.325186965
+UTC: 191818.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488699.2427995,2661,1676488699,240348577,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488699
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336194256666666
+Longitude: -71.08846077
+Altitude: 67.32
+HDOP: 1.1
+UTM_easting: 327948.4457795024
+UTM_northing: 4689216.897549674
+UTC: 191819.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488700.2432852,2662,1676488700,240566492,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488700
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.335983236666664
+Longitude: -71.088607965
+Altitude: 70.324
+HDOP: 1.0
+UTM_easting: 327935.74353056663
+UTM_northing: 4689193.763229622
+UTC: 191820.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488701.2348285,2663,1676488701,232622623,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488701
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.335976796666664
+Longitude: -71.08860399166667
+Altitude: 69.356
+HDOP: 1.1
+UTM_easting: 327936.0533124339
+UTM_northing: 4689193.04007683
+UTC: 191821.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488702.2371182,2664,1676488702,234884977,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488702
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336143271666664
+Longitude: -71.08846455833333
+Altitude: 88.975
+HDOP: 1.1
+UTM_easting: 327947.99463164166
+UTM_northing: 4689211.243720192
+UTC: 191822.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488703.236365,2665,1676488703,234581470,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488703
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33610944666667
+Longitude: -71.08848435833333
+Altitude: 63.785
+HDOP: 1.4
+UTM_easting: 327946.2711516019
+UTM_northing: 4689207.527775138
+UTC: 191823.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488704.2386637,2666,1676488704,237810850,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488704
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.336118666666664
+Longitude: -71.08854061166667
+Altitude: 65.681
+HDOP: 1.1
+UTM_easting: 327941.6618352026
+UTM_northing: 4689208.6654089475
+UTC: 191824.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488705.2510338,2667,1676488705,248952150,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488705
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33608786166667
+Longitude: -71.08854256166667
+Altitude: 62.191
+HDOP: 1.0
+UTM_easting: 327941.4171701411
+UTM_northing: 4689205.248694816
+UTC: 191825.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488706.2341788,2668,1676488706,232680559,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488706
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33604929
+Longitude: -71.08840392833334
+Altitude: 29.407
+HDOP: 1.4
+UTM_easting: 327952.7333693102
+UTM_northing: 4689200.685099998
+UTC: 191826.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"
+1676488707.2396102,2669,1676488707,236171007,,2,/driver,"Header: 
+  seq: 0
+  stamp: 
+    secs: 1676488707
+    nsecs:  20000000
+  frame_id: ""GPS1_Frame""
+Latitude: 42.33607309
+Longitude: -71.088391435
+Altitude: 30.831
+HDOP: 1.4
+UTM_easting: 327953.82754445495
+UTM_northing: 4689203.302630391
+UTC: 191827.2
+Zone: ""19""
+Letter: ""T""
+fix_quality: 1",driver.py,gps_pub,72,"['/gps', '/rosout']"

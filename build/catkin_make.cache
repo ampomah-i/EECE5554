@@ -1,2 +1,0 @@
-LAB1/src/gps_driver
--DCATKIN_DEVEL_PREFIX=/home/immanuel/EECE5554/devel -DCMAKE_INSTALL_PREFIX=/home/immanuel/EECE5554/install -G Unix Makefiles
