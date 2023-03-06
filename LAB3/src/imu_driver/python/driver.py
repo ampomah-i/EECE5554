@@ -7,7 +7,7 @@ import sys
 import numpy as np
 from datetime import datetime
 from imu_driver.msg import *
-from imu_driver.msg import imu_msg
+from imu_driver.msg import Vectornav
 from imu_driver.srv import convert_to_quaternion, convert_to_quaternionResponse
 
 
@@ -24,11 +24,11 @@ from imu_driver.srv import convert_to_quaternion, convert_to_quaternionResponse
 #             print("Service call failed %s", e)    
 
 def driver():
-    pub = rospy.Publisher('imu', imu_msg, queue_size=10)
+    pub = rospy.Publisher('imu', Vectornav, queue_size=10)
     rospy.init_node('imu_driver_node', anonymous=True)
     rospy.wait_for_service("convert_to_quaternion")
 
-    msg = imu_msg()
+    msg = Vectornav()
     seq= 0
 
     args = rospy.myargv(argv = sys.argv)
