@@ -1,0 +1,50 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def allan_variance(data, sample_rate, max_tau):
+    """
+    Computes the Allan variance of a time series data.
+
+    Args:
+        data (numpy.ndarray): The time series data.
+        sample_rate (float): The sample rate of the data.
+        max_tau (int): The maximum time interval to compute the Allan variance for.
+
+    Returns:
+        numpy.ndarray: The Allan variance values for each time interval.
+    """
+    # Compute the number of samples per tau value
+    samples_per_tau = np.floor(max_tau * sample_rate).astype(int)
+
+    # Compute the number of tau values to use
+    num_taus = np.floor(len(data) / samples_per_tau).astype(int)
+
+    # Truncate the data array to be an integer multiple of the number of samples per tau value
+    data_truncated = data[:num_taus*samples_per_tau]
+    data_reshaped = np.reshape(data_truncated, (num_taus, samples_per_tau))
+
+    # Compute the Allan variance for each tau value
+    allan_variances = np.zeros(num_taus-1)
+    for i in range(1, num_taus):
+        allan_variances[i-1] = 0.5*np.mean(np.power(np.diff(data_reshaped[i]), 2))
+
+    return allan_variances
+
+
+# Generate some example data
+data = np.random.normal(size=10000)
+
+# Compute the Allan variance for the data
+max_tau = 100
+sample_rate = 1
+allan_variances = allan_variance(data, sample_rate, max_tau)
+
+# Compute the tau values for the plot
+taus = np.arange(1, len(allan_variances)+1) * max_tau / len(allan_variances)
+
+# Plot the Allan variance
+plt.loglog(taus, allan_variances)
+plt.xlabel('Tau')
+plt.ylabel('Allan Variance')
+plt.title('Allan Variance of Random Data')
+plt.show()
