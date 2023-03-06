@@ -81,29 +81,29 @@ def driver():
             msg.header.stamp.nsecs = int(now.nsecs)
             msg.header.frame_id = 'imu1_frame'
 
-            msg.IMU.header.seq = seq
-            msg.IMU.header.stamp.secs = int(now.secs)
-            msg.IMU.header.stamp.nsecs = int(now.secs)
-            msg.IMU.header.frame_id = 'imu1_frame'
+            msg.imu.header.seq = seq
+            msg.imu.header.stamp.secs = int(now.secs)
+            msg.imu.header.stamp.nsecs = int(now.secs)
+            msg.imu.header.frame_id = 'imu1_frame'
 
-            msg.MagField.header.seq = seq
-            msg.MagField.header.stamp.secs = int(now.secs)
-            msg.MagField.header.stamp.nsecs = int(now.secs)
-            msg.MagField.header.frame_id = 'imu1_frame'
+            msg.mag_field.header.seq = seq
+            msg.mag_field.header.stamp.secs = int(now.secs)
+            msg.mag_field.header.stamp.nsecs = int(now.secs)
+            msg.mag_field.header.frame_id = 'imu1_frame'
 
-            msg.IMU.orientation.x = response.qx
-            msg.IMU.orientation.y = response.qy
-            msg.IMU.orientation.z = response.qz
-            msg.IMU.orientation.w = response.qw
-            msg.IMU.linear_acceleration.x = accX
-            msg.IMU.linear_acceleration.y = accY
-            msg.IMU.linear_acceleration.z = accZ
-            msg.IMU.angular_velocity.x = gyroX
-            msg.IMU.angular_velocity.y = gyroY
-            msg.IMU.angular_velocity.z = gyroZ
-            msg.MagField.magnetic_field.x = magX
-            msg.MagField.magnetic_field.y = magY
-            msg.MagField.magnetic_field.z = magZ
+            msg.imu.orientation.x = response.qx
+            msg.imu.orientation.y = response.qy
+            msg.imu.orientation.z = response.qz
+            msg.imu.orientation.w = response.qw
+            msg.imu.linear_acceleration.x = accX
+            msg.imu.linear_acceleration.y = accY
+            msg.imu.linear_acceleration.z = accZ
+            msg.imu.angular_velocity.x = gyroX
+            msg.imu.angular_velocity.y = gyroY
+            msg.imu.angular_velocity.z = gyroZ
+            msg.mag_field.magnetic_field.x = magX
+            msg.mag_field.magnetic_field.y = magY
+            msg.mag_field.magnetic_field.z = magZ
             msg.VNYMR = decoded_message
 
             pub.publish(msg)
