@@ -1,3 +1,4 @@
 Header header
-sensor_msgs/Imu IMU
-sensor_msgs/MagneticField MagField
+sensor_msgs/imu IMU
+sensor_msgs/mag_field MagField
+string VNYMR

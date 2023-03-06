@@ -104,6 +104,7 @@ def driver():
             msg.MagField.magnetic_field.x = magX
             msg.MagField.magnetic_field.y = magY
             msg.MagField.magnetic_field.z = magZ
+            msg.VNYMR = decoded_message
 
             pub.publish(msg)
             print(msg)
