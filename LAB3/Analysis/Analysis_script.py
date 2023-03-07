@@ -12,7 +12,8 @@ from fitter import Fitter, get_common_distributions, get_distributions
 # LocationD = bagreader('LocationD.bag')
 # LocationB = bagreader('LocationB.bag')
 # LocationC = bagreader('LocationC.bag')
-stationary = bagreader('stationary.bag')
+# stationary = bagreader('stationary.bag')
+action = bagreader('action_imu.bag')
 csvfiles = []
 
 
@@ -32,18 +33,18 @@ csvfiles = []
 #     data4 = LocationA.message_by_topic(t)
 #     csvfiles.append(data4)
 
-for t in stationary.topics:
-    data4 = stationary.message_by_topic(t)
+for t in action.topics:
+    data4 = action.message_by_topic(t)
     csvfiles.append(data4)
 
 # LocationB_df = pd.read_csv('LocationB/vectornav.csv')
 # LocationA_df = pd.read_csv('LocationA/vectornav.csv')
 # LocationC_df = pd.read_csv('LocationC/vectornav.csv')
 # LocationD_df = pd.read_csv('LocationD/vectornav.csv')
-stationary_df = pd.read_csv('stationary/imu.csv')
+action_df = pd.read_csv('action_imu/mu.csv')
 
 # vectornav_string_list = LocationB_df['data'].values.tolist()
-time = stationary_df['Time'].values.tolist()
+time = action_df['Time'].values.tolist()
 # print(len(time))
 # print(len(vectornav_string_list))
 
@@ -263,95 +264,96 @@ def scale(dataframe):
 
     return(dataframe)
 
-def euler_from_quaternion(x, y, z, w):
-        """
-        Convert a quaternion into euler angles (roll, pitch, yaw)
-        roll is rotation around x in radians (counterclockwise)
-        pitch is rotation around y in radians (counterclockwise)
-        yaw is rotation around z in radians (counterclockwise)
-        """
-        t0 = +2.0 * (w * x + y * z)
-        t1 = +1.0 - 2.0 * (x * x + y * y)
-        roll_x = math.atan2(t0, t1)
+# def euler_from_quaternion(x, y, z, w):
+#         """
+#         Convert a quaternion into euler angles (roll, pitch, yaw)
+#         roll is rotation around x in radians (counterclockwise)
+#         pitch is rotation around y in radians (counterclockwise)
+#         yaw is rotation around z in radians (counterclockwise)
+#         """
+#         t0 = +2.0 * (w * x + y * z)
+#         t1 = +1.0 - 2.0 * (x * x + y * y)
+#         roll_x = math.atan2(t0, t1)
      
-        t2 = +2.0 * (w * y - z * x)
-        t2 = +1.0 if t2 > +1.0 else t2
-        t2 = -1.0 if t2 < -1.0 else t2
-        pitch_y = math.asin(t2)
+#         t2 = +2.0 * (w * y - z * x)
+#         t2 = +1.0 if t2 > +1.0 else t2
+#         t2 = -1.0 if t2 < -1.0 else t2
+#         pitch_y = math.asin(t2)
      
-        t3 = +2.0 * (w * z + x * y)
-        t4 = +1.0 - 2.0 * (y * y + z * z)
-        yaw_z = math.atan2(t3, t4)
+#         t3 = +2.0 * (w * z + x * y)
+#         t4 = +1.0 - 2.0 * (y * y + z * z)
+#         yaw_z = math.atan2(t3, t4)
      
-        return roll_x, pitch_y, yaw_z # in radians
+#         return roll_x, pitch_y, yaw_z # in radians
 
-rollX = []
-pitchY = []
-yawZ = []
+# rollX = []
+# pitchY = []
+# yawZ = []
 
-qx = stationary_df['imu.orientation.x'].to_list()
-qy = stationary_df['imu.orientation.y'].to_list()
-qz = stationary_df['imu.orientation.z'].to_list()
-qw = stationary_df['imu.orientation.w'].to_list()
+# qx = stationary_df['imu.orientation.x'].to_list()
+# qy = stationary_df['imu.orientation.y'].to_list()
+# qz = stationary_df['imu.orientation.z'].to_list()
+# qw = stationary_df['imu.orientation.w'].to_list()
 
-i = 0
-while i < len(qx):
-     rollX.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[0])
-     pitchY.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[1])
-     yawZ.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[2])
+# i = 0
+# while i < len(qx):
+#      rollX.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[0])
+#      pitchY.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[1])
+#      yawZ.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[2])
 
-     i+=1
+#      i+=1
 
-df2 = pd.DataFrame({'Time':time,
-                    'yaw':yawZ,
-                    'pitch': pitchY,
-                    'roll': rollX,})
+# df2 = pd.DataFrame({'Time':time,
+#                     'yaw':yawZ,
+#                     'pitch': pitchY,
+#                     'roll': rollX,})
 
-scale(stationary_df)
+scale(action_df)
+ndata = action_df[(action_df['Time'] > 5) & (action_df['Time'] < 15)]
 
+ndata.plot(x='Time', y=["imu.angular_velocity.x", "imu.angular_velocity.y", "imu.angular_velocity.z"],
+                            kind="line", title="GYRO XYZ v Time", ylabel='Orientation [rads]', xlabel='Time [s]') 
+plt.legend(['GYRO X (rad/s)', "GYRO Y (rad/s)", "GYRO Z (rad/s)"])
+plt.show()
 
-# df2.plot(x='Time', y=["yaw", "pitch", "roll"],
-#                             kind="line", title="Orientation x,y,z vs Time - 5 minute stationary", ylabel='Orientation [rads]', xlabel='Time [s]') 
-# plt.legend(['yaw [rad]', "pitch [rad]", "roll [rad]"])
+# ax = stationary_df.hist(column='imu.linear_acceleration.x')
 
-ax = stationary_df.hist(column='imu.linear_acceleration.x')
+# mean = stationary_df['imu.linear_acceleration.x'].mean()
+# median = stationary_df['imu.linear_acceleration.x'].median()
+# std = stationary_df['imu.linear_acceleration.x'].std()
 
-mean = stationary_df['imu.linear_acceleration.x'].mean()
-median = stationary_df['imu.linear_acceleration.x'].median()
-std = stationary_df['imu.linear_acceleration.x'].std()
+# print(mean, median, std)
 
-print(mean, median, std)
+# ax = ax[0]
+# for x in ax:
 
-ax = ax[0]
-for x in ax:
+#     # Despine
+#     x.spines['right'].set_visible(False)
+#     x.spines['top'].set_visible(False)
+#     x.spines['left'].set_visible(False)
 
-    # Despine
-    x.spines['right'].set_visible(False)
-    x.spines['top'].set_visible(False)
-    x.spines['left'].set_visible(False)
+#     # Switch off ticks
+#     x.tick_params(axis="both", which="both", bottom="off", top="off", labelbottom="on", left="off", right="off", labelleft="on")
 
-    # Switch off ticks
-    x.tick_params(axis="both", which="both", bottom="off", top="off", labelbottom="on", left="off", right="off", labelleft="on")
+#     # Draw horizontal axis lines
+#     vals = x.get_yticks()
+#     for tick in vals:
+#         x.axhline(y=tick, linestyle='dashed', alpha=0.4, color='#eeeeee', zorder=1)
 
-    # Draw horizontal axis lines
-    vals = x.get_yticks()
-    for tick in vals:
-        x.axhline(y=tick, linestyle='dashed', alpha=0.4, color='#eeeeee', zorder=1)
+#     # Remove title
+#     x.set_title("Sensor output distribution for accel x ")
 
-    # Remove title
-    x.set_title("Sensor output distribution for accel x ")
+#     # Set x-axis label
+#     x.set_xlabel("Acceleration ($\mathregular{ms^{-2}}$)", labelpad=20, weight='bold', size=12)
 
-    # Set x-axis label
-    x.set_xlabel("Acceleration ($\mathregular{ms^{-2}}$)", labelpad=20, weight='bold', size=12)
+#     # Set y-axis label
+#     x.set_ylabel("Frequency", labelpad=20, weight='bold', size=12)
+# # plt.show()
 
-    # Set y-axis label
-    x.set_ylabel("Frequency", labelpad=20, weight='bold', size=12)
-# plt.show()
-
-noise = stationary_df['imu.linear_acceleration.x'].values
-f = Fitter(noise)
-f.fit()
-print(f.summary())
+# noise = stationary_df['imu.linear_acceleration.x'].values
+# f = Fitter(noise)
+# f.fit()
+# print(f.summary())
 
 # plot1 = sea.scatterplot(x = 'UTM_easting', y = 'UTM_northing', data = LocationD_df).set(title = 'RTK Stationary Easting vs Northing Open')
 # plot2 = sea.scatterplot(x = 'UTM_easting', y = 'UTM_northing', data = LocationA_df).set(title = 'RTK Stationary Easting vs Northing Occluded')
