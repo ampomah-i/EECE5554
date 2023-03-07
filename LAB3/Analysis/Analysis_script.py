@@ -4,14 +4,15 @@ import seaborn as sea
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
+import math
 import csv
-
+from fitter import Fitter, get_common_distributions, get_distributions
 
 # LocationA = bagreader('LocationA.bag')
 # LocationD = bagreader('LocationD.bag')
 # LocationB = bagreader('LocationB.bag')
 # LocationC = bagreader('LocationC.bag')
-
+stationary = bagreader('stationary.bag')
 csvfiles = []
 
 
@@ -31,55 +32,60 @@ csvfiles = []
 #     data4 = LocationA.message_by_topic(t)
 #     csvfiles.append(data4)
 
-LocationB_df = pd.read_csv('LocationB/vectornav.csv')
-LocationA_df = pd.read_csv('LocationA/vectornav.csv')
-LocationC_df = pd.read_csv('LocationC/vectornav.csv')
-LocationD_df = pd.read_csv('LocationD/vectornav.csv')
+for t in stationary.topics:
+    data4 = stationary.message_by_topic(t)
+    csvfiles.append(data4)
 
-vectornav_string_list = LocationB_df['data'].values.tolist()
-time = LocationB_df['Time'].values.tolist()
-print(len(time))
-print(len(vectornav_string_list))
+# LocationB_df = pd.read_csv('LocationB/vectornav.csv')
+# LocationA_df = pd.read_csv('LocationA/vectornav.csv')
+# LocationC_df = pd.read_csv('LocationC/vectornav.csv')
+# LocationD_df = pd.read_csv('LocationD/vectornav.csv')
+stationary_df = pd.read_csv('stationary/imu.csv')
 
-bad_data = []
-yaw = []
-pitch = []
-roll = []
-magX = []
-magY = []
-magZ = []
-accX = []
-accY = []
-accZ = []
-gyroX = []
-gyroY = []
-gyroZ = []
+# vectornav_string_list = LocationB_df['data'].values.tolist()
+time = stationary_df['Time'].values.tolist()
+# print(len(time))
+# print(len(vectornav_string_list))
 
-j = -1
-for data in vectornav_string_list:
-    j += 1
-    if type(data) == str:
-        entry = data.split(',')
-        if len(entry) == 13:
-            yaw.append(float(entry[1]))
-            pitch.append(float(entry[2]))
-            roll.append(float(entry[3]))
-            magX.append(float(entry[4]))
-            magY.append(float(entry[5]))
-            magZ.append(float(entry[6]))
-            accX.append(float(entry[7]))
-            accY.append(float(entry[8]))
-            accZ.append(float(entry[9]))
-            gyroX.append(float(entry[10]))
-            gyroY.append(float(entry[11]))
-            if entry[12][0:9] == '+00.00.00':
-                gyroZ.append(0)
-            else:
-                gyroZ.append(float(entry[12][0:9]))
-        else:
-            time.pop(j)
-    else:
-        time.pop(j)
+# bad_data = []
+# yaw = []
+# pitch = []
+# roll = []
+# magX = []
+# magY = []
+# magZ = []
+# accX = []
+# accY = []
+# accZ = []
+# gyroX = []
+# gyroY = []
+# gyroZ = []
+
+# j = -1
+# for data in vectornav_string_list:
+#     j += 1
+#     if type(data) == str:
+#         entry = data.split(',')
+#         if len(entry) == 13:
+#             yaw.append(float(entry[1]))
+#             pitch.append(float(entry[2]))
+#             roll.append(float(entry[3]))
+#             magX.append(float(entry[4]))
+#             magY.append(float(entry[5]))
+#             magZ.append(float(entry[6]))
+#             accX.append(float(entry[7]))
+#             accY.append(float(entry[8]))
+#             accZ.append(float(entry[9]))
+#             gyroX.append(float(entry[10]))
+#             gyroY.append(float(entry[11]))
+#             if entry[12][0:9] == '+00.00.00':
+#                 gyroZ.append(0)
+#             else:
+#                 gyroZ.append(float(entry[12][0:9]))
+#         else:
+#             time.pop(j)
+#     else:
+#         time.pop(j)
 
 #print(bad_data)
 
@@ -90,122 +96,122 @@ for values in time:
     time[i] = time[i] - first_time_value
     i += 1
 
-df2 = pd.DataFrame({'time(s)':time,
-                    'yaw':yaw,
-                    'pitch': pitch,
-                    'roll': roll,
-                    'magX': magX,
-                    'magY': magY,
-                    'magZ': magZ,
-                    'accX': accX,
-                    'accY': accY,
-                    'accZ': accZ,
-                    'gyroX': gyroX,
-                    'gyroY': gyroY,
-                    'gyroZ': gyroZ})
+# df2 = pd.DataFrame({'time(s)':time,
+#                     'yaw':yaw,
+#                     'pitch': pitch,
+#                     'roll': roll,
+#                     'magX': magX,
+#                     'magY': magY,
+#                     'magZ': magZ,
+#                     'accX': accX,
+#                     'accY': accY,
+#                     'accZ': accZ,
+#                     'gyroX': gyroX,
+#                     'gyroY': gyroY,
+#                     'gyroZ': gyroZ})
 
-fs = 40
-ts = 1.0/fs
-# Allan deviation section
-def AllanDeviation(dataArr, fs, maxNumM=100):
-    ts = 1.0/fs
-    N = len(dataArr)
-    Nmax = 2**np.floor(np.log2(N/2))
-    M = np.logspace(np.log10(1), np.log10(Nmax), num=maxNumM)
-    M = np.ceil(M)  # Round up to integer
-    M = np.unique(M)  # Remove duplicates
-    taus = M * ts  # Compute 'cluster durations' tau
+# fs = 40
+# ts = 1.0/fs
+# # Allan deviation section
+# def AllanDeviation(dataArr, fs, maxNumM=100):
+#     ts = 1.0/fs
+#     N = len(dataArr)
+#     Nmax = 2**np.floor(np.log2(N/2))
+#     M = np.logspace(np.log10(1), np.log10(Nmax), num=maxNumM)
+#     M = np.ceil(M)  # Round up to integer
+#     M = np.unique(M)  # Remove duplicates
+#     taus = M * ts  # Compute 'cluster durations' tau
 
-    # Compute Allan variance
-    allanVar = np.zeros(len(M))
-    for i, mi in enumerate(M):
-        twoMi = int(2 * mi)
-        mi = int(mi)
-        allanVar[i] = np.sum(
-            (dataArr[twoMi:N] - (2.0 * dataArr[mi:N-mi]) + dataArr[0:N-twoMi])**2
-        )
+#     # Compute Allan variance
+#     allanVar = np.zeros(len(M))
+#     for i, mi in enumerate(M):
+#         twoMi = int(2 * mi)
+#         mi = int(mi)
+#         allanVar[i] = np.sum(
+#             (dataArr[twoMi:N] - (2.0 * dataArr[mi:N-mi]) + dataArr[0:N-twoMi])**2
+#         )
     
-    allanVar /= (2.0 * taus**2) * (N - (2.0 * M))
+#     allanVar /= (2.0 * taus**2) * (N - (2.0 * M))
 
-    # print('Rate random walk (K):', K)
-    # print('Angle random walk (N):', N)
-    # print('Bias stability (B):', B)
-    return (taus, np.sqrt(allanVar))  # Return deviation (dev = sqrt(var))
+#     # print('Rate random walk (K):', K)
+#     # print('Angle random walk (N):', N)
+#     # print('Bias stability (B):', B)
+#     return (taus, np.sqrt(allanVar))  # Return deviation (dev = sqrt(var))
 
-gx = gyroX # [deg/s]
-gy = gyroY 
-gz = gyroZ
+# gx = gyroX # [deg/s]
+# gy = gyroY 
+# gz = gyroZ
 
-# Calculate gyro angles
-thetax = np.cumsum(gx) * ts  # [deg]
-thetay = np.cumsum(gy) * ts
-thetaz = np.cumsum(gz) * ts
+# # Calculate gyro angles
+# thetax = np.cumsum(gx) * ts  # [deg]
+# thetay = np.cumsum(gy) * ts
+# thetaz = np.cumsum(gz) * ts
 
-# Compute Allan deviations
-(taux, adx) = AllanDeviation(thetax, fs, maxNumM=200)
-(tauy, ady) = AllanDeviation(thetay, fs, maxNumM=200)
-(tauz, adz) = AllanDeviation(thetaz, fs, maxNumM=200)
+# # Compute Allan deviations
+# (taux, adx) = AllanDeviation(thetax, fs, maxNumM=200)
+# (tauy, ady) = AllanDeviation(thetay, fs, maxNumM=200)
+# (tauz, adz) = AllanDeviation(thetaz, fs, maxNumM=200)
 
 
-# --------------------------------------------------------------------------
-# Finding ANGLE RANDOM WALK N
-# Find the index where the slope of the log-scaled Allan deviation is equal
-# to the slope specified
-slopen = -0.5
-logtau = np.log10(taux)
-logadev = np.log10(adx)
-dlogadev = np.diff(logadev)/np.diff(logtau)
-i = np.argmin(np.abs(dlogadev-slopen))
+# # --------------------------------------------------------------------------
+# # Finding ANGLE RANDOM WALK N
+# # Find the index where the slope of the log-scaled Allan deviation is equal
+# # to the slope specified
+# slopen = -0.5
+# logtau = np.log10(taux)
+# logadev = np.log10(adx)
+# dlogadev = np.diff(logadev)/np.diff(logtau)
+# i = np.argmin(np.abs(dlogadev-slopen))
 
-# Find the y-intercept of the line
-b = logadev[i] - slopen*logtau[i]
+# # Find the y-intercept of the line
+# b = logadev[i] - slopen*logtau[i]
 
-logN = slopen*np.log(1) + b
-N = 10**logN
+# logN = slopen*np.log(1) + b
+# N = 10**logN
 
-# Plot data on log-scale
-tauN = 1
-lineN = N / ((taux)**0.5)
-#---------------------------------------------------------------------------
+# # Plot data on log-scale
+# tauN = 1
+# lineN = N / ((taux)**0.5)
+# #---------------------------------------------------------------------------
 
-#---------------------------------------------------------------------------
-# Finding RATE RANDOM WALK K
-slopek = 0.5
-logtau = np.log10(taux)
-logadev = np.log10(adx)
-dlogadev = np.diff(logadev)/np.diff(logtau)
-i = np.argmin(np.abs(dlogadev-slopek))
+# #---------------------------------------------------------------------------
+# # Finding RATE RANDOM WALK K
+# slopek = 0.5
+# logtau = np.log10(taux)
+# logadev = np.log10(adx)
+# dlogadev = np.diff(logadev)/np.diff(logtau)
+# i = np.argmin(np.abs(dlogadev-slopek))
 
-# Find the y-intercept of the line
-b = logadev[i] - slopek*logtau[i]
+# # Find the y-intercept of the line
+# b = logadev[i] - slopek*logtau[i]
 
-logK = slopek*np.log10(3) + b
-K = 10**logK
+# logK = slopek*np.log10(3) + b
+# K = 10**logK
 
-# Plot data on log-scale
-tauK = 3
-lineK = K * ((taux/3)**0.5)
-#---------------------------------------------------------------------------
+# # Plot data on log-scale
+# tauK = 3
+# lineK = K * ((taux/3)**0.5)
+# #---------------------------------------------------------------------------
 
-#---------------------------------------------------------------------------
-# Finding BIAS INSTABILITY B
-slopeb = 0
-logtau = np.log10(taux)
-logadev = np.log10(adx)
-dlogadev = np.diff(logadev)/np.diff(logtau)
-i = np.argmin(np.abs(dlogadev-slopeb))
+# #---------------------------------------------------------------------------
+# # Finding BIAS INSTABILITY B
+# slopeb = 0
+# logtau = np.log10(taux)
+# logadev = np.log10(adx)
+# dlogadev = np.diff(logadev)/np.diff(logtau)
+# i = np.argmin(np.abs(dlogadev-slopeb))
 
-# Find the y-intercept of the line
-b = logadev[i] - slopeb*logtau[i]
+# # Find the y-intercept of the line
+# b = logadev[i] - slopeb*logtau[i]
 
-# Determine the bias instability coefficient from the line
-scfb = np.sqrt(2*np.log(2)/np.pi)
-logB = b - np.log10(scfb)
-B = 10**logB
+# # Determine the bias instability coefficient from the line
+# scfb = np.sqrt(2*np.log(2)/np.pi)
+# logB = b - np.log10(scfb)
+# B = 10**logB
 
-# Plot data on log-scale
-tauB = taux[i]
-lineB = B * scfb * np.ones(np.size(taux))
+# # Plot data on log-scale
+# tauB = taux[i]
+# lineB = B * scfb * np.ones(np.size(taux))
 
 # plt.figure()
 # plt.title('GyroX Allan Deviations - Location C')
@@ -246,13 +252,106 @@ lineB = B * scfb * np.ones(np.size(taux))
 # plt.yscale('log')
 # plt.show()
 
-print(B)
-print(K)
-print(N)
-# df2.plot(x="time(s)", y=["gyroX", "gyroY", "gyroZ"],
-#         kind="line", title="Gyro x,y,z vs Time Location D", ylabel='gyro (rad/s)').set_xlim(xmin=0, xmax=(time[len(time)-1]+1))
+# print(B)
+# print(K)
+# print(N)
+def scale(dataframe):
+    row = dataframe[0:1]
+    time_scale = row.iloc[0]['Time']
 
+    dataframe['Time'] -= time_scale
+
+    return(dataframe)
+
+def euler_from_quaternion(x, y, z, w):
+        """
+        Convert a quaternion into euler angles (roll, pitch, yaw)
+        roll is rotation around x in radians (counterclockwise)
+        pitch is rotation around y in radians (counterclockwise)
+        yaw is rotation around z in radians (counterclockwise)
+        """
+        t0 = +2.0 * (w * x + y * z)
+        t1 = +1.0 - 2.0 * (x * x + y * y)
+        roll_x = math.atan2(t0, t1)
+     
+        t2 = +2.0 * (w * y - z * x)
+        t2 = +1.0 if t2 > +1.0 else t2
+        t2 = -1.0 if t2 < -1.0 else t2
+        pitch_y = math.asin(t2)
+     
+        t3 = +2.0 * (w * z + x * y)
+        t4 = +1.0 - 2.0 * (y * y + z * z)
+        yaw_z = math.atan2(t3, t4)
+     
+        return roll_x, pitch_y, yaw_z # in radians
+
+rollX = []
+pitchY = []
+yawZ = []
+
+qx = stationary_df['imu.orientation.x'].to_list()
+qy = stationary_df['imu.orientation.y'].to_list()
+qz = stationary_df['imu.orientation.z'].to_list()
+qw = stationary_df['imu.orientation.w'].to_list()
+
+i = 0
+while i < len(qx):
+     rollX.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[0])
+     pitchY.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[1])
+     yawZ.append(euler_from_quaternion(qx[i], qy[i],qz[i],qw[i])[2])
+
+     i+=1
+
+df2 = pd.DataFrame({'Time':time,
+                    'yaw':yawZ,
+                    'pitch': pitchY,
+                    'roll': rollX,})
+
+scale(stationary_df)
+
+
+# df2.plot(x='Time', y=["yaw", "pitch", "roll"],
+#                             kind="line", title="Orientation x,y,z vs Time - 5 minute stationary", ylabel='Orientation [rads]', xlabel='Time [s]') 
+# plt.legend(['yaw [rad]', "pitch [rad]", "roll [rad]"])
+
+ax = stationary_df.hist(column='imu.linear_acceleration.x')
+
+mean = stationary_df['imu.linear_acceleration.x'].mean()
+median = stationary_df['imu.linear_acceleration.x'].median()
+std = stationary_df['imu.linear_acceleration.x'].std()
+
+print(mean, median, std)
+
+ax = ax[0]
+for x in ax:
+
+    # Despine
+    x.spines['right'].set_visible(False)
+    x.spines['top'].set_visible(False)
+    x.spines['left'].set_visible(False)
+
+    # Switch off ticks
+    x.tick_params(axis="both", which="both", bottom="off", top="off", labelbottom="on", left="off", right="off", labelleft="on")
+
+    # Draw horizontal axis lines
+    vals = x.get_yticks()
+    for tick in vals:
+        x.axhline(y=tick, linestyle='dashed', alpha=0.4, color='#eeeeee', zorder=1)
+
+    # Remove title
+    x.set_title("Sensor output distribution for accel x ")
+
+    # Set x-axis label
+    x.set_xlabel("Acceleration ($\mathregular{ms^{-2}}$)", labelpad=20, weight='bold', size=12)
+
+    # Set y-axis label
+    x.set_ylabel("Frequency", labelpad=20, weight='bold', size=12)
 # plt.show()
+
+noise = stationary_df['imu.linear_acceleration.x'].values
+f = Fitter(noise)
+f.fit()
+print(f.summary())
 
 # plot1 = sea.scatterplot(x = 'UTM_easting', y = 'UTM_northing', data = LocationD_df).set(title = 'RTK Stationary Easting vs Northing Open')
 # plot2 = sea.scatterplot(x = 'UTM_easting', y = 'UTM_northing', data = LocationA_df).set(title = 'RTK Stationary Easting vs Northing Occluded')
