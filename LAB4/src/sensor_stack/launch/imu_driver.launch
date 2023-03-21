@@ -1,0 +1,9 @@
+<launch>
+	<arg name = "imu_port"/>
+	<node name ="imu_driver" pkg ="sensor_stack" type ="imu_driver.py" args="$(arg imu_port)" output="screen">
+	<!--	<param name = "port" value="$(arg imu_port)"/> -->
+	</node>
+		
+	<node name ="euler_quaternion_converter" pkg ="sensor_stack" type ="convert_to_quaternions.py" output="screen"></node>
+	
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/immanuel/EECE5554/LAB3/devel
+
+Name: imu_driver
+Description: Description of imu_driver
+Version: 0.0.0
+Cflags: -I/home/immanuel/EECE5554/LAB3/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

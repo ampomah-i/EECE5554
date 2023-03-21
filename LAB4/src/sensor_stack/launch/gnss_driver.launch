@@ -1,0 +1,5 @@
+<launch>
+	<arg name="port" default="/dev/pts/5"/>
+	<node name="gnss_driver" pkg="sensor_stack" type="gnss_driver.py" output="screen" clear_params="true" args="port"/>
+		<param name="port" value="$(arg port)" />
+</launch>
