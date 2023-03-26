@@ -58,15 +58,15 @@ def driver():
             yaw = float(data[1])
             pitch = float(data[2])
             roll = float(data[3])
-            magX = float(data[4])
-            magY = float(data[5])
-            magZ = float(data[6])
+            magX = float(data[4]/10000)
+            magY = float(data[5]/10000)
+            magZ = float(data[6]/10000)
             accX = float(data[7])
             accY = float(data[8])
             accZ = float(data[9])
             gyroX = float(data[10])
             gyroY = float(data[11])
-            gyroZ = float(data[12][0:9])
+            gyroZ = float(data[12].split("*")[0])
 
             try:
                 quaternions = rospy.ServiceProxy("convert_to_quaternion", convert_to_quaternion)
@@ -83,12 +83,12 @@ def driver():
 
             msg.imu.header.seq = seq
             msg.imu.header.stamp.secs = int(now.secs)
-            msg.imu.header.stamp.nsecs = int(now.secs)
+            msg.imu.header.stamp.nsecs = int(now.nsecs)
             msg.imu.header.frame_id = 'imu1_frame'
 
             msg.mag_field.header.seq = seq
             msg.mag_field.header.stamp.secs = int(now.secs)
-            msg.mag_field.header.stamp.nsecs = int(now.secs)
+            msg.mag_field.header.stamp.nsecs = int(now.nsecs)
             msg.mag_field.header.frame_id = 'imu1_frame'
 
             msg.imu.orientation.x = response.qx
