@@ -8,6 +8,7 @@ import scipy.integrate as integrate
 from scipy.signal import butter, filtfilt
 from scipy.spatial.transform import Rotation as R
 from scipy.ndimage import rotate
+from scipy.interpolate import interp1d
 
 import math
 
@@ -350,7 +351,7 @@ ZAF_ = ZAF[:start1]*.85
 ZAF[:start1] = ZAF_
 ZAF = ZAF*1.2
 
-gps_time = gps_time[1:]
+# gps_time = gps_time[1:]
 # fig, ax6 = plt.subplots()
 # ax6.plot(gps_time, gps_velocity)
 # ax6.set_xlabel('Time [sec]')
@@ -393,11 +394,10 @@ filtered_y = filtered_y - np.mean(filtered_y)
 filtered_y_vel = integrate.cumulative_trapezoid(filtered_y, time, initial = 0)
 distance_y_from_integration = integrate.cumulative_trapezoid(filtered_y_vel, time, initial = 0)
 distance_x_from_integration = integrate.cumulative_trapezoid(filtered_vel, time, initial = 0)
-distance = distance - distance[0]
+# distance = distance - distance[0]
 fig, ax6 = plt.subplots()
-ax6.plot(gps_easting, gps_northing)
+ax6.plot(gps_time, distance)
 ax6.set_title('Dead Reconing')
-ax6.axis('equal')
 
 print(np.where(time > 300))
 calculated_Ydot[12000:] *= -1
@@ -406,14 +406,14 @@ calculated_Ydot[12000:] *= -1
 #-----------------------------------------------------------------------------------------------
 window_size = 1
 window = np.ones(window_size) / float(window_size)
-smoothed_v = np.convolve(forward_vel, window, 'same')
+smoothed_v = np.convolve(ZAF, window, 'same')
 
-Ve = smoothed_v*np.cos(np.deg2rad(driving_yaw))
-Vn = smoothed_v*np.sin(np.deg2rad(driving_yaw))
+Ve = ZAF*np.cos(np.deg2rad(driving_yaw))
+Vn = ZAF*np.sin(np.deg2rad(driving_yaw))
 
-Xe = integrate.cumulative_trapezoid(Ve, time, initial = 0)/42
-Xn = integrate.cumulative_trapezoid(Vn, time, initial = 0)/42
-
+Xe = integrate.cumulative_trapezoid(Ve, time, initial = 0)
+Xn = integrate.cumulative_trapezoid(Vn, time, initial = 0)
+distance_imu = np.sqrt(Xe**2 + Xn**2)
 rate = np.mean(np.diff(Xe))
 ratey = np.mean(np.diff(Xn))
 
@@ -425,12 +425,22 @@ arr_diag = np.fliplr(np.rot90(yay))
 
 
 # fig, ax7 = plt.subplots()
-# ax6.plot(gps_easting, gps_northing)
+ax6.set_xlim(left = 0)
+ax6.plot(time, distance_imu)
 # ax7.plot(time, calculated_Ydot, c = 'blue')
-ax6.plot(arr_diag[0], arr_diag[1], c = 'black')
-ax6.legend(['GPS Track', 'IMU Track'])
-# ax7.set_title('Y Acceleration Calculated and Observed')
-ax6.set_xlabel('Xe [meters]')
-ax6.set_ylabel('Xn [meters]')
+# ax6.plot(arr_diag[0], arr_diag[1], c = 'black')
+ax6.legend(['GPS Displacement', 'Integrated Displacement'])
+ax6.set_title('GPS and Integrated Inertial Displacement')
+ax6.set_xlabel('Time [sec]')
+ax6.set_ylabel('Displacement [meters]')
+ax6.grid(True, linestyle=':', linewidth=0.5, color='gray')
 
 plt.show()
+
+#------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------
+# Dead Reckoning Estimation
+#------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------
