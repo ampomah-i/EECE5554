@@ -58,9 +58,9 @@ def driver():
             yaw = float(data[1])
             pitch = float(data[2])
             roll = float(data[3])
-            magX = float(data[4]/10000)
-            magY = float(data[5]/10000)
-            magZ = float(data[6]/10000)
+            magX = float(data[4])/10000
+            magY = float(data[5])/10000
+            magZ = float(data[6])/10000
             accX = float(data[7])
             accY = float(data[8])
             accZ = float(data[9])
